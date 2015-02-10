@@ -22,7 +22,14 @@ float kolejka :: getwskaznik_skalujacy2()
 
 float kolejka :: long_kolejka()
 {
-    return ((rand() % 100 ) + 0); // 100 liczb_w_przedziale + startujemy od 0, losujemy dlugosc kolejki
+    return ((rand() % 20 ) + 0); // 100 liczb_w_przedziale + startujemy od 0, losujemy dlugosc kolejki
+}
+void klient :: wczytaj(int i)
+{
+    ifstream plik("klienci.txt");
+    string tablica[20];
+    getline(plik, tablica[i]);
+    cout<<tablica[i]<<endl;
 }
 
 bool klient :: czy_ma_kare()
@@ -37,7 +44,7 @@ bool klient :: czy_wypozycza()
 
 float klient :: ile_ma_kary()
 {
-    return (((rand() % 336 ) + 1) * 0,1); //kara za jeden dzien to 10 groszy
+    return (((rand() % 336 ) + 2) * 0,1); //kara za jeden dzien to 10 groszy
 }
 
 int klient ::ile_ksiazek_wypozycza()

@@ -43,6 +43,8 @@ public:
 class klient
 {
 public:
+    klient(){};
+    void wczytaj(int i);
     bool czy_ma_kare();
     bool czy_wypozycza();
     float ile_ma_kary();
