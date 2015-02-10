@@ -22,7 +22,6 @@ float kolejka :: getwskaznik_skalujacy2()
 
 float kolejka :: long_kolejka()
 {
-    srand( time( NULL ) );
     return ((rand() % 100 ) + 0); // 100 liczb_w_przedziale + startujemy od 0, losujemy dlugosc kolejki
 }
 

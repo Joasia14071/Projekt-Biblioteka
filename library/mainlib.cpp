@@ -8,6 +8,7 @@ int main()
 	Lib techniczna;
 	hour dzien;
 	kolejka kolejkowicze;
+    srand( time( NULL ) );
 	while(dzien.godzina<20) //biblioteka jest otwarta do godizny 20:00, jedna petla to godzina czasu trwania biblioteki
     {
         cout<<"Jest godzina: "<<dzien.godzina<<endl;
