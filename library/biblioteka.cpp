@@ -25,6 +25,26 @@ float kolejka :: long_kolejka()
     return ((rand() % 100 ) + 0); // 100 liczb_w_przedziale + startujemy od 0, losujemy dlugosc kolejki
 }
 
+bool klient :: czy_ma_kare()
+{
+    return rand() % 2;
+}
+
+bool klient :: czy_wypozycza()
+{
+    return rand() % 2;
+}
+
+float klient :: ile_ma_kary()
+{
+    return (((rand() % 336 ) + 1) * 0,1); //kara za jeden dzien to 10 groszy
+}
+
+int klient ::ile_ksiazek_wypozycza()
+{
+    return (rand () % 20) +1; //wypozycza maksymalnie 20 ksi¹¿ek
+}
+
 void Lib :: wczytaj()
 {
 	plik.open("lektury.txt");

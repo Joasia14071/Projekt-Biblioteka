@@ -40,5 +40,12 @@ public:
     float long_kolejka();
 };
 
-
+class klient
+{
+public:
+    bool czy_ma_kare();
+    bool czy_wypozycza();
+    float ile_ma_kary();
+    int ile_ksiazek_wypozycza();
+};
 #endif

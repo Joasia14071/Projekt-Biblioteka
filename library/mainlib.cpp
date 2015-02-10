@@ -17,12 +17,31 @@ int main()
         else
             {kolejkowicze.ilosc_osob=(kolejkowicze.long_kolejka()*kolejkowicze.getwskaznik_skalujacy2());}
         cout<<"W trakcie tej godziny otwarcia biblioteki pojawilo sie: "<<kolejkowicze.ilosc_osob<<" osob"<<endl;
-        techniczna.wczytaj();
-        techniczna.przypisz();
-        techniczna.wypisz();
+        klient Jan_Kowalski;
+        if(Jan_Kowalski.czy_ma_kare())
+        {
+            float kara=Jan_Kowalski.ile_ma_kary();
+            cout<<"Naliczono :" <<kara<<" zlotych kary."<<endl<<endl;
+        }
+        else
+        {
+            cout<<"Nie przetrzymal ksiazek, wiec nie naliczono kary."<<endl<<endl;
+        }
+        if(Jan_Kowalski.czy_wypozycza())
+        {
+            int ile_ksiazek=Jan_Kowalski.ile_ksiazek_wypozycza();
+            cout<<"Osoba wypozycza: "<<ile_ksiazek<<" ksiazek"<<endl<<endl;
+
+        }
+        else
+        {
+            cout<<"Osoba nie wypozycza ksiazek."<<endl<<endl;
+        }
+        //techniczna.wczytaj();
+        //techniczna.przypisz();
+        //techniczna.wypisz();
         dzien.godzina=dzien.godzina++;
     }
     cout<<"Jest godzina 20:00 - zamkniecie biblioteki"<<endl;
     return 0;
 };
-
