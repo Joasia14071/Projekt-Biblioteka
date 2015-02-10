@@ -44,7 +44,7 @@ void klient :: wczytaj(int i)
 
 void klient :: wczytaj_ksiazke(int i)
 {
-    ifstream plik("ksiazki.txt");
+    ifstream plik("spis_ksiazek.txt");
     if (plik.good() == true )
     {
                     int nr_wiersza=0;
