@@ -5,13 +5,12 @@ using namespace std;
 
 int main()
 {
-	Lib techniczna;
 	hour dzien;
 	kolejka kolejkowicze;
     srand( time( NULL ) );
 	while(dzien.godzina<20) //biblioteka jest otwarta do godizny 20:00, jedna petla to godzina czasu trwania biblioteki
     {
-        cout<<"Jest godzina: "<<dzien.godzina<<endl;
+        cout<<endl<<"Jest godzina: "<<dzien.godzina<<endl;
         if(dzien.godzina<15)
             {kolejkowicze.ilosc_osob=(kolejkowicze.long_kolejka()*kolejkowicze.getwskaznik_skalujacy1());}
         else
@@ -24,27 +23,27 @@ int main()
             if(Jan_Kowalski->czy_ma_kare())
             {
                 float kara=Jan_Kowalski->ile_ma_kary();
-                cout<<"Naliczono :" <<kara<<" zlotych kary."<<endl<<endl;
+                cout<<"Naliczono :" <<kara<<" zlotych kary."<<endl;
             }
             else
             {
-                cout<<"Nie przetrzymal ksiazek, wiec nie naliczono kary."<<endl<<endl;
+                cout<<"Nie przetrzymal ksiazek, wiec nie naliczono kary."<<endl;
             }
             if(Jan_Kowalski->czy_wypozycza())
             {
                 int ile_ksiazek=Jan_Kowalski->ile_ksiazek_wypozycza();
-                cout<<"Osoba wypozycza: "<<ile_ksiazek<<" ksiazek"<<endl<<endl;
+                cout<<"Osoba wypozycza: "<<ile_ksiazek<<" ksiazek"<<endl<<"Tytuly ksiazek to: "<<endl;
+                for(int j=0; j<ile_ksiazek; j++)
+                    Jan_Kowalski->wczytaj_ksiazke(j);
             }
             else
             {
                 cout<<"Osoba nie wypozycza ksiazek."<<endl<<endl;
             }
-            //techniczna.wczytaj();
-            //techniczna.przypisz();
-            //techniczna.wypisz();
             delete Jan_Kowalski;
         }
     dzien.godzina=dzien.godzina++;
+    system("pause");
     }
     cout<<"Jest godzina 20:00 - zamkniecie biblioteki"<<endl;
     return 0;

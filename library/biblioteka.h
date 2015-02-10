@@ -8,21 +8,6 @@
 
 using namespace std;
 
-class Lib
-{
-	public:
-	    Lib(){};
-		void menu();
-		void wczytaj();
-		void przypisz();
-		void wypisz();
-		void zamknij();
-	private:
-		fstream plik;
-		vector<string> regal[6];
-		int lib[8][2];
-};
-
 class hour
 {
 public:
@@ -45,9 +30,11 @@ class klient
 public:
     klient(){};
     void wczytaj(int i);
+    void wczytaj_ksiazke(int i);
     bool czy_ma_kare();
     bool czy_wypozycza();
     float ile_ma_kary();
     int ile_ksiazek_wypozycza();
 };
+
 #endif

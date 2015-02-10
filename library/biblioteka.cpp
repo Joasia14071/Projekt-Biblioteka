@@ -1,6 +1,7 @@
 #include "biblioteka.h"
 
 #include <fstream>
+#include <iostream>
 #include <string>
 #include <cstdlib>
 #include <iostream>
@@ -27,9 +28,35 @@ float kolejka :: long_kolejka()
 void klient :: wczytaj(int i)
 {
     ifstream plik("klienci.txt");
-    string tablica[20];
-    getline(plik, tablica[i]);
-    cout<<tablica[i]<<endl;
+    if (plik.good() == true )
+    {
+                    int nr_wiersza=0;
+                    string wiersz;
+                    while ( !plik.eof() )
+                    {
+                          getline(plik,wiersz);
+                          if(nr_wiersza==i){cout<<endl<<wiersz<<endl;}
+                          nr_wiersza++;
+                    }
+    }
+    else cout<<"ERROR\n\n";
+}
+
+void klient :: wczytaj_ksiazke(int i)
+{
+    ifstream plik("ksiazki.txt");
+    if (plik.good() == true )
+    {
+                    int nr_wiersza=0;
+                    string wiersz;
+                    while ( !plik.eof() )
+                    {
+                          getline(plik,wiersz);
+                          if(nr_wiersza==i){cout<<wiersz<<endl;}
+                          nr_wiersza++;
+                    }
+    }
+    else cout<<"ERROR\n\n";
 }
 
 bool klient :: czy_ma_kare()
@@ -44,57 +71,10 @@ bool klient :: czy_wypozycza()
 
 float klient :: ile_ma_kary()
 {
-    return (((rand() % 336 ) + 2) * 0,1); //kara za jeden dzien to 10 groszy
+    return (((rand() % 336 ) + 2) * 0.1); //kara za jeden dzien to 10 groszy
 }
 
 int klient ::ile_ksiazek_wypozycza()
 {
-    return (rand () % 20) +1; //wypozycza maksymalnie 20 ksi¹¿ek
-}
-
-void Lib :: wczytaj()
-{
-	plik.open("lektury.txt");
-
-	if( plik.good() == true )
-    {
-        cout << "Wczytano baze lektur" <<endl<<endl;
-    }
-    else cout << "Brak dostepu do bazy lektur" <<endl<<endl;
-}
-
-void Lib :: przypisz()
-{
-	int i = 1;
-	int k = 0;
-	string a;
-	while(!plik.eof())
-    {
-		plik >> a;
-		regal[i].push_back(a);
-		i=(i+1)%3;
-	}
-}
-
-void Lib :: wypisz()
- {
-	int i = 0;
-	int k = 0;
-
-	while(k<regal[i].size())
-    {
-		cout << setw(20) << regal[i].at(k);
-		i++;
-		if (i==3)
-		 {
-			i=0;
-			k++;
-			cout << endl;
-		}
-	}
-}
-
-void Lib :: zamknij()
-{
-	plik.close();
+    return (rand () % 20) +1; //wypozycza maksymalnie 20 ksizek
 }
