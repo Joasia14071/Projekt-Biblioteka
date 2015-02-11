@@ -8,13 +8,6 @@
 
 using namespace std;
 
-class hour
-{
-public:
-    hour(){};
-    int godzina=10;//biblioteka jest otwierana o 10:00
-};
-
 class kolejka
 {
 public:
@@ -23,14 +16,20 @@ public:
     float getwskaznik_skalujacy1();
     float getwskaznik_skalujacy2();
     float long_kolejka();
+    string przypisanie_dostepnosci_ksiazka(string tablica[200]);
 };
 
 class klient
 {
 public:
     klient(){};
+    int losowanie_ksiazki();
+    int oddaj();
+    int rezerwacja();
     void wczytaj(int i);
-    void wczytaj_ksiazke(int i);
+    string wczytaj_ksiazke(int i, string tab[200]);
+    bool czy_rezerwuje();
+    bool czy_oddaje();
     bool czy_ma_kare();
     bool czy_wypozycza();
     float ile_ma_kary();
